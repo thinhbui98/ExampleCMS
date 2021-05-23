@@ -26,7 +26,7 @@ Route::prefix('admin')->group(function () {
 
     Route::get('index', [AdminController::class, 'index']);
 
-    Route::post('store', [AdminController::class, 'store']);
+    Route::any('store', [AdminController::class, 'store']);
 
     Route::put('show/{id}', [AdminController::class, 'show']);
 

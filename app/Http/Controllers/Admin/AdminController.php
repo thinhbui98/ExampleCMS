@@ -35,7 +35,9 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-        
+        if ($request->isMethod('POST')) {
+            
+        }
         return view('admin.store');
     }
 
