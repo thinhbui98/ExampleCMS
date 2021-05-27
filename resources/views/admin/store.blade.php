@@ -14,11 +14,39 @@
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-2">
-                                <label>First Name</label>
+                                <label>User Name</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="text" id="first-name" class="form-control"
-                                    name="fname" placeholder="First Name">
+                                <input type="text" class="form-control"
+                                    name="username" placeholder="First Name">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-10 form-group">
+                                <input type="email" id="email-id" class="form-control"
+                                    name="email" placeholder="Email">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Password</label>
+                            </div>
+                            <div class="col-md-10 form-group">
+                                <input type="password" id="password" class="form-control"
+                                    name="password" placeholder="Password">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Full Name</label>
+                            </div>
+                            <div class="col-md-10 form-group">
+                                <input type="text" id="email-id" class="form-control"
+                                    name="email-id" placeholder="Email">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-10 form-group">
+                                <input type="email" id="email-id" class="form-control"
+                                    name="email-id" placeholder="Email">
                             </div>
                             <div class="col-md-2">
                                 <label>Email</label>
