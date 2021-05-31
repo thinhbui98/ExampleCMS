@@ -17,57 +17,43 @@
                                 <label>User Name</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="text" class="form-control"
-                                    name="username" placeholder="First Name">
+                                <input type="text" class="form-control" name="username" placeholder="username12345">
                             </div>
                             <div class="col-md-2">
                                 <label>Email</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="email" id="email-id" class="form-control"
-                                    name="email" placeholder="Email">
+                                <input type="email" class="form-control" name="email" placeholder="usermail@gmail.com">
                             </div>
                             <div class="col-md-2">
                                 <label>Password</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="password" id="password" class="form-control"
-                                    name="password" placeholder="Password">
+                                <input type="password" class="form-control" name="password" placeholder="●●●●●●●●">
                             </div>
                             <div class="col-md-2">
                                 <label>Full Name</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="text" id="email-id" class="form-control"
-                                    name="email-id" placeholder="Email">
+                                <input type="text" class="form-control" name="fullname" placeholder="Thomas Baron">
                             </div>
                             <div class="col-md-2">
-                                <label>Email</label>
+                                <label>Phone</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="email" id="email-id" class="form-control"
-                                    name="email-id" placeholder="Email">
+                                <input type="text" class="form-control" name="email-id" placeholder="Email">
                             </div>
                             <div class="col-md-2">
-                                <label>Email</label>
+                                <label>Address</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="email" id="email-id" class="form-control"
-                                    name="email-id" placeholder="Email">
+                                <textarea class="form-control" name="address" rows="3"></textarea>
                             </div>
                             <div class="col-md-2">
-                                <label>Mobile</label>
+                                <label>Image</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="number" id="contact-info" class="form-control"
-                                    name="contact" placeholder="Mobile">
-                            </div>
-                            <div class="col-md-2">
-                                <label>Password</label>
-                            </div>
-                            <div class="col-md-10 form-group">
-                                <input type="password" id="password" class="form-control"
-                                    name="password" placeholder="Password">
+                                <input class="form-control" type="file" id="image">
                             </div>
                             <div class="col-12 col-md-8 offset-md-2 form-group">
                                 <div class='form-check'>
@@ -79,10 +65,8 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 d-flex justify-content-end">
-                                <button type="submit"
-                                    class="btn btn-primary me-1 mb-1">Submit</button>
-                                <button type="reset"
-                                    class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
                             </div>
                         </div>
                     </div>
