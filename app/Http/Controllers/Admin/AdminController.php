@@ -15,7 +15,7 @@ class AdminController extends Controller
             $checkAdmin = Admin::where([
                 'username' => $inputRequest['username'],
                 'password' => $inputRequest['password'],
-                'deleted' => 0
+                'deleted'  => 0
             ])->get();
             if (count($checkAdmin) > 0) {
                 return redirect('admin/index');
@@ -36,7 +36,18 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         if ($request->isMethod('POST')) {
-            
+            $input = [
+                'username' => $request->input('username'),
+                'password' => $request->input('password'),
+                'email'    => $request->input('email'),
+                'fullname' => $request->input('fullname'),
+                'phone'    => $request->input('phone'),
+                'address'  => $request->input('address'),
+                'image'    => $request->file('image'),
+            ];
+            if ($input['image']) {
+                
+            }
         }
         return view('admin.store');
     }

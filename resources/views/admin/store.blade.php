@@ -10,7 +10,8 @@
         </div>
         <div class="card-content">
             <div class="card-body">
-                <form class="form form-horizontal">
+                <form class="form form-horizontal" action="" method="POST">
+                    @csrf
                     <div class="form-body">
                         <div class="row">
                             <div class="col-md-2">
@@ -41,7 +42,7 @@
                                 <label>Phone</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input type="text" class="form-control" name="email-id" placeholder="Email">
+                                <input type="text" class="form-control" name="phone" placeholder="Email">
                             </div>
                             <div class="col-md-2">
                                 <label>Address</label>
@@ -53,7 +54,7 @@
                                 <label>Image</label>
                             </div>
                             <div class="col-md-10 form-group">
-                                <input class="form-control" type="file" id="image">
+                                <input class="form-control" type="file" name="image">
                             </div>
                             <div class="col-12 col-md-8 offset-md-2 form-group">
                                 <div class='form-check'>
