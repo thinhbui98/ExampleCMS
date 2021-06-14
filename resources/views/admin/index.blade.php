@@ -1,63 +1,46 @@
 @extends('admin.master')
 @section('page-content')
-    <div class="page-heading">
-        <h3>Administrator List</h3>
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hoverable Rows</h4>
+            <h6 class="card-subtitle">Add <code>.table-hover</code> to enable a hover state on table
+                rows within a <code>&lt;tbody&gt;</code>.</h6>
+        </div>
+        <h6 class="card-title mt-5"><i
+            class="mr-1 font-18 mdi mdi-numeric-1-box-multiple-outline"></i> Table With
+        Outside Padding</h6>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="page-content">
-        <section class="section">
-            <div class="row" id="table-hover-row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Hoverable rows</h4>
-                            <a href="{{ url('admin/store') }}" class="btn btn-success">
-                                Add Account
-                            </a>
-                        </div>
-                        <div class="card-content">
-                            <!-- table hover -->
-                            <div class="table-responsive">
-                                <table class="table table-hover table-striped mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>NAME</th>
-                                            <th>USERNAME</th>
-                                            <th>EMAIL</th>
-                                            <th>PHONE</th>
-                                            <th>IMAGE</th>
-                                            <th>ACTION</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($listAdmin as $item)
-                                            <tr>
-                                                <td class="text-bold-500">{{ $item->fullname }}</td>
-                                                <td>{{ $item->username }}</td>
-                                                <td class="text-bold-500">{{ $item->email }}</td>
-                                                <td>{{ $item->phone }}</td>
-                                                <td>
-                                                    <img src="{{ $item->image }}" alt="">
-                                                </td>
-                                                <td>
-                                                    <a href="{{ url('admin/edit/' . $item->id) }}" class="btn btn-primary">
-                                                        Edit
-                                                    </a>
-                                                    <a href="{{ url('admin/view/' . $item->id) }}" class="btn btn-info">
-                                                        View
-                                                    </a>
-                                                    <a href="{{ url('admin/delete/' . $item->id) }}" class="btn btn-danger">
-                                                        Delete
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+</div>
 @endsection

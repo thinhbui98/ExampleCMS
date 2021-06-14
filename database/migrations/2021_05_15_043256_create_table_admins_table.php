@@ -21,8 +21,10 @@ class CreateTableAdminsTable extends Migration
             $table->string('fullname');
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
+            $table->string('image')->nullable();
             $table->smallInteger('deleted')->default(0);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

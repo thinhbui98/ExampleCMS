@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->group(function () {
-    Route::any('/', function () {
-        return redirect('admin/login');
+Route::match(['get', 'post'], 'auth/login', [AuthController::class, 'login'])->name('login');
+
+Route::group(['prefix' => 'cms', 'middleware' => 'auth'], function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('index', [AdminController::class, 'index']);
+        Route::post('store', [AdminController::class, 'store']);
+        Route::get('show/{id}', [AdminController::class, 'show']);
+        Route::get('destroy/{id}', [AdminController::class, 'destroy']);
     });
-    Route::any('login', [AdminController::class, 'login']);
-
-    Route::get('index', [AdminController::class, 'index']);
-
-    Route::any('store', [AdminController::class, 'store']);
-
-    Route::put('show/{id}', [AdminController::class, 'show']);
-
-    Route::delete('destroy/{id}', [AdminController::class, 'destroy']);
 });
+
