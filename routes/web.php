@@ -24,6 +24,7 @@ Route::match(['get', 'post'], 'auth/login', [AuthController::class, 'login'])->n
 Route::group(['prefix' => 'cms', 'middleware' => 'auth:admin'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('index', [AdminController::class, 'index']);
+        Route::match(['get', 'post'], 'edit/{id}', [AdminController::class, 'edit']);
         Route::post('store', [AdminController::class, 'store']);
         Route::get('show/{id}', [AdminController::class, 'show']);
         Route::get('destroy/{id}', [AdminController::class, 'destroy']);

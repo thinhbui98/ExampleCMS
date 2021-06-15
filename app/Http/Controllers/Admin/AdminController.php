@@ -25,7 +25,7 @@ class AdminController extends Controller
                 'fullname' => $request->input('fullname'),
                 'phone'    => $request->input('phone'),
                 'address'  => $request->input('address'),
-                'image'    => $request->file('image'),
+                'image'    => $request->input('image'),
             ];
             if ($input['image']) {
                 
