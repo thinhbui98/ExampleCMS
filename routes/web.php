@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::match(['get', 'post'], 'auth/login', [AuthController::class, 'login'])->name('login');
 
-Route::group(['prefix' => 'cms', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'cms', 'middleware' => 'auth:admin'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('index', [AdminController::class, 'index']);
         Route::post('store', [AdminController::class, 'store']);
