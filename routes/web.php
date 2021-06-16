@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::match(['get', 'post'], 'auth/login', [AuthController::class, 'login'])->name('login');
+Route::prefix('auth')->group(function () {
+    Route::match(['get', 'post'], 'auth/login', [AuthController::class, 'login'])->name('login');
+    Route::get('logout', [AuthController::class, 'logout']);
+});
+
 
 Route::group(['prefix' => 'cms', 'middleware' => 'auth:admin'], function () {
     Route::prefix('admin')->group(function () {
         Route::get('index', [AdminController::class, 'index']);
         Route::match(['get', 'post'], 'edit/{id}', [AdminController::class, 'edit']);
-        Route::post('store', [AdminController::class, 'store']);
+        Route::match(['get', 'post'], 'store', [AdminController::class, 'store']);
         Route::get('show/{id}', [AdminController::class, 'show']);
         Route::get('destroy/{id}', [AdminController::class, 'destroy']);
     });
